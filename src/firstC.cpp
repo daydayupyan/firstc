@@ -9,6 +9,26 @@
 #include <iostream>
 using namespace std;
 
+/**
+ * 此方法無法交換值
+ */
+void test(int a, int b) {
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+/**
+ * 用指针变量可以交换值
+ */
+void test1(int *x, int *y) {
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
+}
+
 int main() {
 //	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	printf("hehehehehe\n");
@@ -32,5 +52,14 @@ int main() {
 	for(i = 9; i>= 0 ;i--) {
 		printf("%d\n", a[i]);
 	}
+
+
+	int x = 10,y = 20;
+	test(x,y);
+	printf("x=%d,y=%d\n",x,y);
+	test1(&x,&y);
+
+	printf("x=%d,y=%d\n",x,y);
+
 	return 0;
 }
